@@ -26,7 +26,7 @@ st.markdown(
     .main {
         max-width: 800px;
         margin: 50px auto;
-        background: white;
+        background: #2f2f2f;
         border-radius: 12px;
         padding: 30px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -35,10 +35,14 @@ st.markdown(
     /* Header styling */
     h1 {
         font-size: 2.5rem;
-        color: #1b5e20;
+        color: neongreen;
         text-align: center;
         margin-bottom: 20px;
         font-weight: 700;
+        border: solid white 2px;
+        border-radius: 11px;
+        margin-top: 0px;
+        background-color: #36393d;
     }
 
     /* Text input styling */
@@ -66,12 +70,13 @@ st.markdown(
         border: none;
         border-radius: 8px;
         padding: 10px 20px;
+        width: 174.788px; height: 52.8px; transition: none;
         transition: all 0.3s ease;
         box-shadow: 0 4px 10px rgba(102, 187, 106, 0.3);
     }
     .stButton button:hover {
         background: #388e3c;
-        font-color: white;
+        font-color: #fff;
         box-shadow: 0 6px 15px rgba(56, 142, 60, 0.4);
     }
 
@@ -87,6 +92,7 @@ st.markdown(
         padding: 15px;
         border-radius: 8px;
         font-size: 1rem;
+        font-color: #fff
         line-height: 1.5;
         color: #2e7d32;
         margin-top: 20px;
@@ -120,15 +126,45 @@ st.markdown(
         font-size: 0.9rem;
         margin-top: 10px;
     }
+    .block-container {
+    padding-top: 32px;
+    position: relative;
+    left: 11px;
+    top: -50;
+    height: 592.4px;
+    width: 772.8px;
+    transition: none;
+    }
+    .stTextInput input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #a5d6a7;
+    font-size: 1rem;
+    color: #b7bcb8;
+}   
+    .main {
+    max-width: 800px;
+    margin-top: 80px;
+    margin: 50px auto;
+    background: #2f2f2f;
+    border-radius: 40px;
+    padding: 60px;
+    padding-bottom: 50px;
+    padding-right: 90px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+    .p {
+    padding-left: 90px;}
     </style>
     """,
     unsafe_allow_html=True
 )
+html = """<h1>🌿 GreenShield AI</h1>
+          <p>How can GreenShield AI Help you today?</p>
+          """
+st.markdown(html, unsafe_allow_html=True)
 
-st.markdown("<h1>🌿 Environmentalist Assistant</h1>", unsafe_allow_html=True)
-st.write("Welcome! Enter a prompt below to interact with the assistant.")
-
-user_prompt = st.text_input("Your Prompt:", placeholder="Type your query here...")
+user_prompt = st.text_input("Type your prompt here:", placeholder="Type your query here...")
 
 if st.button("Get Response"):
     if user_prompt.strip():
@@ -157,10 +193,10 @@ if st.button("Get Response"):
 
                 response = chat_completion.choices[0].message.content
                 st.markdown(f"<div class='response-box'>{response}</div>", unsafe_allow_html=True)
-
                 st.info(f"Total Tokens Used: {chat_completion.usage.total_tokens}")
 
             except Exception as e:
                 st.error(f"An error occurred: {e}")
     else:
         st.warning("Please enter a prompt.")
+
