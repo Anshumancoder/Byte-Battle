@@ -3,9 +3,9 @@ import cv2
 from cvzone.ClassificationModule import Classifier
 
 app = Flask(__name__)
-classifier = Classifier('Model/keras_model.h5', 'Model/labels.txt')
-cap = cv2.VideoCapture(2)
+classifier = Classifier('GreenSort/Model/keras_model.h5', 'GreenSort/Model/labels.txt')
 
+cap = cv2.VideoCapture(2)
 
 @app.route('/video_feed')
 def video_feed():
@@ -23,8 +23,7 @@ def video_feed():
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-            return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
+    return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/get_result')
 def get_result():
@@ -34,32 +33,29 @@ def get_result():
         classID = prediction[1]
         label, strategy = get_label_and_strategy(classID)
         return jsonify({'label': label, 'strategy': strategy})
-    return jsonify({'label': label, 'strategy': strategy})
+    return jsonify({'label': 'No result', 'strategy': 'No data'})
 
-
-def get_label_strategy(classID):
+def get_label_and_strategy(classID):
     categories = {
-        1: ('Cardboard-Biodegradable', 'Recycle by composting or reusing.'),
+        1: ('Cardboard-Biodegradable', 'Recycle by composting or repurposing.'),
         2: ('Glass-Solid Waste', 'Clean and place in the recycling bin for glass.'),
-        3: ('Footwear-Textile Waste', 'Donate or Recycle through a textile recycling center.'),
-        4: ('Cloth-Textile Waste', 'Donate or repurpose as cleaning rags.'),
-        5: ('Metal-Non-Biodegradable', 'Recyle at a metal collection facility.'),
-        6: ('Paper-Biodegradable', 'Recycle in the paper recycling bin or Reuse.'),
-        7: ('Battery-Hazardous', 'Dispose at desginated battery recycling centres.'),
-        8: ('Organic Waste-Biodegradable', 'Compost to create natural fertilizers.'),
-        9: ('Toothbrush-Non-biodegradable', 'Reuse for kitchen purposes or place in non-recyclable waste.'),
+        3: ('Footwear-Textile waste', 'Donate or recycle through a textile recycling center.'),
+        4: ('Clothes-Textile waste', 'Donate or repurpose as cleaning rags.'),
+        5: ('Metal-Non-Biodegradable', 'Recycle at a metal collection facility.'),
+        6: ('Paper-Biodegradable', 'Recycle in the paper recycling bin.'),
+        7: ('Battery-Hazardous', 'Dispose at designated battery recycling centers.'),
+        8: ('Organic Waste-Biodegradable', 'Compost to create natural fertilizer.'),
+        9: ('Toothbrush-Non-Biodegradable', 'Reuse creatively or place in non-recyclable waste.'),
         10: ('Diaper/Pads-Rejected Waste', 'Wrap and place in non-recyclable waste.'),
-        11: ('Mask-Household Waste', 'Dispose of in household waste with proper containment.'),
+        11: ('Mask-Household waste', 'Dispose of in household waste with proper containment.'),
         12: ('Plastic-Non-biodegradable', 'Check the type and recycle or dispose accordingly.'),
-        13: ('Phone-E-Waste', 'Take to electronic recycling facility.')
+        13: ('Phone-E-waste', 'Take to an electronic recycling facility.')
     }
-    return categories.get(classID, ('Unknown', 'No Recycling Strategy available.'))
+    return categories.get(classID, ('Unknown', 'No recycling strategy available.'))
 
-
-@app.route("/")
+@app.route('/')
 def index():
     return render_template('greenindex.html')
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True, threaded=True)
