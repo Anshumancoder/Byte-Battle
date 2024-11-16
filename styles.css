@@ -1,0 +1,23 @@
+.body {
+    background-color: rgb(23, 23, 23);
+}
+
+.container-fluid {
+    height: 60px;
+}
+
+.heading {
+    margin-top: 130px;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+} 
+
+#top-right-heading {
+    font-size: 35px;
+}
+
+#nav-link-button {
+    font-size: 18px ;
+    margin-left: 10px;
+}
