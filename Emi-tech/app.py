@@ -63,7 +63,7 @@ def capture_picture(output_filename="captured_image.jpg"):
         print("Error: Could not capture an image.")
 
 
-   cap.release()
+    cap.release()
 
 
 serial_thread = threading.Thread(target=read_serial_data, daemon=True)
