@@ -1,7 +1,7 @@
 import google.generativeai as genai
 import streamlit as st
 
-genai.configure(api_key="AIzaSyBU0NzJcqET0jZRS86bFwA0DXpPJwKjgAQ")
+genai.configure(api_key="AIzaSyC02yLEcFaphV1Wu7fm2bjfaJ2eCN0hmXw")
 
 generation_config = {
     "temperature": 1,

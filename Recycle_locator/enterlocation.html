@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles_recycle-locator.css">
+    <title>Recycle Locator</title>
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="VedioBg html1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="top">
+        <h1 class="title">Recycle Locator</h1>
+    </div>
+
+    <div class="everything">
+        <br><br><br><br><br><br>
+        <p class="topic">Enter your location to know the nearby recycling Facility</p>
+        <br><br><br><br><br>
+        <div class="Enter_location">
+            <form action="https://www.google.com/maps" method="get" target="_blank">
+                <label for="location">Where are you?</label>
+                <input value="recycling centers: " class="textbox" type="text" id="location" name="q" placeholder="Enter location here" required>
+                <input type="hidden" name="q" value="recycling centers">
+                <button class="submit" type="submit">Search for recycling centers</button>
+            </form>
+        </div>
+        <br><br><br>
+        <a href="index_recycle-locator.html">
+            <button class="backtohome">Back to main page ➡</button>
+        </a>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
