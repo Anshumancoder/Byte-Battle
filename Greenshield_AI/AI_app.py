@@ -173,8 +173,8 @@ css = """
     .st-emotion-cache-13ln4jf {
         padding-left: 1rem;
         padding-right: 1rem;
-        border: 4px solid aliceblue;
-        border-radius: 20px;
+        border: solid;
+    }
     }
 }
     </style>
