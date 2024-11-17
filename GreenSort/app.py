@@ -5,7 +5,7 @@ from cvzone.ClassificationModule import Classifier
 app = Flask(__name__)
 classifier = Classifier('GreenSort/Model/keras_model.h5', 'GreenSort/Model/labels.txt')
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(1)
 
 @app.route('/video_feed')
 def video_feed():

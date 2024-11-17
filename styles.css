@@ -1,66 +1,77 @@
-.body {
-    background-color: rgb(23, 23, 23);
+.navbar {
+    height: 50px;
+    padding: 5px 20px;
 }
 
 .container-fluid {
-    height: 60px;
+    height: 80px;
 }
 
-.heading {
-    margin-top: 130px;
+.body {
+    background: linear-gradient(135deg, black, #013220);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 70px 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.content-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #2e7d32;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 48%; 
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #d4d4d4;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1rem;
+    color: #9e9e9e;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 85%;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #2e7d32;
     color: white;
-    font-size: 60px;
-} 
-
-#top-right-heading {
-    font-size: 35px;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-#nav-link-button {
-    font-size: 18px ;
-    margin-left: 10px;
-}
-
-
-.Greenshild-heading {
-    margin-top: 260px;
-    margin-left: 130px;
-    color: white;
-}
-
-.Greenshild-subheading {
-    font-size:30px;
-    margin-left: 130px;
-    color:#5a57576d;
-}
-
-#Greenshild-button {
-    margin-left: 130px;
-    height: 50px;
-    width: 80px;
-    font-size: 20px;
-}
-
-#navbarSupportedContent {
-    font-size: 20px;
-    margin-left: 30px;
-}
-
-.recycle-locator-heading {
-    color: white;   
-    margin-top: 400px;
-    margin-left: 130px;
-}
-
-#recycle-locator-button {
-    margin-left: 130px;
-    height: 50px;
-    width: 140px;
-    font-size: 20px;
+button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
 }
 
 .img_pfp {
-    height: 80px;
-    width: 100px;
+    height: 55px;
+    width: 80px;
 }
+
+.heading {
+    font-size: 31px;
+}
+
+
