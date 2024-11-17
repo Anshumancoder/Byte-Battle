@@ -170,6 +170,13 @@ css = """
     margin-top: 0px;
      background-color: #36393d;
     }
+    .st-emotion-cache-13ln4jf {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: 4px solid aliceblue;
+        border-radius: 20px;
+    }
+}
     </style>
     """
 
