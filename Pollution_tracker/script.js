@@ -81,8 +81,8 @@ function renderPollutionGraph(hourlyData) {
 
   // Extract time labels and PM10/PM2.5 values
   const labels = hourlyData.time; // Assuming time is an array of timestamps
-  const pm10Values = hourlyData.pm10; // PM10 data
-  const pm25Values = hourlyData.pm2_5; // PM2.5 data
+  const pm10Values = hourlyData.pm10;
+  const pm25Values = hourlyData.pm2_5;
 
   if (labels.length === 0 || pm10Values.length === 0 || pm25Values.length === 0) {
     console.error('No data available for chart rendering');

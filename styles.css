@@ -4,7 +4,7 @@
 }
 
 .container-fluid {
-    height: 50px;
+    height: 80px;
 }
 
 .body {
@@ -64,3 +64,14 @@ button:hover {
     background-color: #388e3c;
     transform: scale(1.05);
 }
+
+.img_pfp {
+    height: 55px;
+    width: 80px;
+}
+
+.heading {
+    font-size: 31px;
+}
+
+
