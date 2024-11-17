@@ -4,18 +4,23 @@ import serial
 import threading
 import cv2
 import time
+import cv2
+
 def capture_picture(output_filename="captured_image.jpg"):
     cap = cv2.VideoCapture(0)  
     if not cap.isOpened():
-        return "Error: Could not access the camera."
+        return "Error: Could not access the camera."    
     ret, frame = cap.read()
     if ret:
-        cv2.imwrite(output_filename, frame)
-        print(f"Image saved to {output_filename}.")
+        save_path = "C:/Users/saura/OneDrive/Documents/GitHub/Byte-Battlesss/Emi-tech/static/" + output_filename
+        cv2.imwrite(save_path, frame)
+        print(f"Image saved to {save_path}.")
     else:
-        print("Error: Could not capture an image.")
+        print("Error: Could not capture an image.")    
     cap.release()
+capture_picture("captured_image.jpg")
 co_value_global=None
+
 def read_sensor_data():
     try: 
         arduino = serial.Serial('COM5', 115200, timeout=1)
