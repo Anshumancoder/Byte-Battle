@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     padding: 0;
-    color: #333;
+    color: #ffffff;
   }
   
   .body {
@@ -60,4 +60,8 @@ body {
   .label {
     font-size: 15px;
     margin-bottom: 30px;
+  }
+
+  .heading {
+    color: white;
   }
