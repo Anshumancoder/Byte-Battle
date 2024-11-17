@@ -64,3 +64,13 @@
     height: 80px;
     width: 100px;
 }
+
+.heading {
+    height: 55px;
+    width: 200px;
+    margin-bottom: 125px;
+}
+
+.img_pfp {
+    height: 70px;
+}
